@@ -1,0 +1,26 @@
+{
+  "name": "intro-to-sequelize",
+  "version": "1.0.0",
+  "description": "Learn CRUD with express | sequelize | postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Indraprahastha/Intro-to-Sequelize.git"
+  },
+  "author": "Prahastha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Indraprahastha/Intro-to-Sequelize/issues"
+  },
+  "homepage": "https://github.com/Indraprahastha/Intro-to-Sequelize#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "pg": "^7.3.0",
+    "sequelize": "^4.8.0"
+  }
+}
