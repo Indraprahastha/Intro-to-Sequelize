@@ -6,7 +6,7 @@ let models = require('../models')
 //   teachersModels.
 // })
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   models.Teacher.findAll().then(function(Teacher) {
     res.render('teacher',{dataTeachers:Teacher});
   });

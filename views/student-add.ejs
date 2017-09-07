@@ -29,6 +29,9 @@
 <!--Menu ======================================================================== Diatas-->
 
 <div style="text-align:center;margin-top:100px"class="container">
+  <%if(err){%>
+    <h3><%= err %></h3>
+  <%}%>
   <form class="form-horizontal" action="/student/add" method="post">
     <input type="text" name="first_name" class="form-control" placeholder="First Name"><br>
     <input type="text" name="last_name" class="form-control" placeholder="Last Name"><br>

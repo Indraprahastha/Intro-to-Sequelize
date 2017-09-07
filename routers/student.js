@@ -6,15 +6,15 @@ let models = require('../models')
 //   teachersModels.
 // })
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   models.Student.findAll().then(function(Student) {
     res.render('student',{dataStudent:Student});
   });
 });
 
 //===================================================== ADD
-router.get('/add', function(req, res, next) {
-  res.render('student-add');
+router.get('/add', function(req, res) {
+  res.render('student-add',{err: false});
 })
 router.post('/add',function (req, res) {
   models.Student.create({
@@ -22,8 +22,11 @@ router.post('/add',function (req, res) {
     last_name : req.body.last_name,
     email : req.body.email
   })
-  .then(newUser => {
+  .then(() => {
     res.redirect('/student')
+  })
+  .catch(()=>{
+    res.render('student-add',{err: 'Maaf Email Telah digunakan Brow'});
   })
 })
 //===================================================== getById
@@ -48,6 +51,9 @@ router.post('/edit/:id', (req, res) => {
     }
   })
   .then(()=>{
+    res.redirect('/student')
+  })
+  .catch((data)=>{
     res.redirect('/student')
   })
 })
